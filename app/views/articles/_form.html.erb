@@ -1,0 +1,36 @@
+<div class="container text-center padded">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= form_for(@article) do |f| %>
+        <div class="form-group">
+          <%= f.label :title %></br>
+          <%= f.text_field :title %>
+        </div>
+        <div class="form-group">
+          <%= f.label :content %></br>
+          <%= f.text_field :content, id:'hidden_content'%>
+          <div id=editor_box>
+            <div id="editor"></div>
+            <!-- <pre id="editor"></pre> -->
+          </div>
+        </div>
+        <%= f.submit class:'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+  $('#hidden_content').hide();
+  var editor = ace.edit("editor");
+  // editor.setTheme("ace/theme/twilight");
+  editor.session.setMode("ace/mode/javascript");
+
+  editor.getSession().on('change', function () {
+         $('#hidden_content').val(editor.getSession().getValue());
+  });
+  // $('#hidden_content').val(editor.getValue());
+</script>

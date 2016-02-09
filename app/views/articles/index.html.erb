@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="box">
+          <%= link_to(new_article_path) do %>
+            <i class="fa fa-file-text-o" id="create"></i>
+          <% end %>
+          <% @articles.each do |article| %>
+            <div class="card_white">
+              <%= link_to(article_path(article)) do %>
+                <h2><%= article.title %></h2>
+              <% end %>
+              <p><%= article.content %></p>
+              <%= link_to(article_path(article), method: :delete, data: {confirm: "Are you sure?"}) do %>
+                <i class='fa fa-trash-o' id="delete"></i>
+              <% end %>
+              <%= link_to(edit_article_path(article)) do %>
+                <i class="fa fa-pencil" id="edit"></i>
+              <% end%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$white: #FFFFFF;
+$grey: #E6E6E6;
+$darker_grey: #DADADA;
+
+.wrapper{
+  background-color: $grey;
+}
+.card_white{
+  background-color: $white;
+  padding: 20px 0;
+  margin: 20px 0;
+  position: relative;
+  border: 1px solid $darker_grey;
+}
+#delete{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+#edit{
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+}
+.box{
+  position: relative;
+  padding-top: 50px;
+}
+#create{
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  font-size: 30px;
+}
+#editor_box{
+  position: relative;
+  height: 500px;
+  max-width: 500px;
+}
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
